@@ -57,12 +57,14 @@ Theme Style
     display: flex;
     align-items: center;
     -webkit-tap-highlight-color: transparent;
-  }
-  .theme__fill,
-  .theme__icon {
+}
+
+.theme__fill,
+.theme__icon {
     transition: transform var(--transDur) ease-in-out;
-  }
-  .theme__fill {
+}
+
+.theme__fill {
     background-color: var(--bg);
     display: block;
     mix-blend-mode: difference;
@@ -70,4 +72,47 @@ Theme Style
     inset: 0;
     height: 100%;
     transform: translateX(-100%);
+}
+
+
+.theme__icon,
+.theme__toggle {
+z-index: 1;
+}
+
+.theme__icon,
+.theme__icon-part {
+position: absolute;
+}
+
+.theme__icon {
+    display: block;
+    top: 0.75em;
+    left: 0.75em;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.theme__icon-part {
+    border-radius: 50%;
+    box-shadow: 0.4em -0.4em 0 0.5em hsl(0, 0%, 100%) inset;
+    top: calc(50% - 0.5em);
+    left: calc(50% - 0.5em);
+    width: 1em;
+    height: 1em;
+    transition: box-shadow var(--transDur) ease-in-out,
+    opacity var(--transDur) ease-in-out, transform var(--transDur) ease-in-out;
+    transform: scale(0.5);
+}
+
+.theme__icon-part ~ .theme__icon-part {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 0.05em;
+    box-shadow: none;
+    top: 50%;
+    left: calc(50% - 0.05em);
+    transform: rotate(0deg) translateY(0.5em);
+    transform-origin: 50% 0;
+    width: 0.1em;
+    height: 0.2em;
   }
