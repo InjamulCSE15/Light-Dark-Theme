@@ -32,7 +32,13 @@
         </span>
         <span class="light_Dark">Dark</span>
     </label>
-    <small> &copy; Copyright - 2022 || Injamul Alam</small>
+    <small> &copy; Copyright - <span id="dynamicYr"></span> || Injamul Alam</small>
+
+    <!-- JavaScript -->
+    <script>
+        let Year = new Date().getFullYear(); // This year (example: 2023)
+        document.querySelector('#dynamicYr').textContent = Year;
+    </script>
 </body>
 
 </html>
